@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+
+{% block body %}
+	<h4>Comments for Article: {{object_list.0.article |capfirst}}</h4>
+
+	{% for comment in object_list  %}
+
+		<ul>
+
+
+			<p>{{comment.created_by|capfirst}} 
+				 says: <br>{{comment.content}}</p>
+				 <ul> posted {{comment.created_at}}</ul>
+
+
+		</ul>
+
+	{%empty%}
+
+
+	<h5>No comments to show</h5>
+	{% endfor %}
+	<a href="{% url 'article_detail' object_list.0.article.slug %}">Back to Article</a>
+
+{% endblock body %}

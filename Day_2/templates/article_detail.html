@@ -1,0 +1,25 @@
+{%extends "base.html"%}
+{% block title %}
+	{{object.title}}
+{% endblock title %}
+
+{% block body %}
+	<div>
+	<h2>{{article.title|capfirst}}</h2>
+
+		<p>{{article.content}}</p>
+		<ul>
+		<h5>Written by: {{article.author}}</h5>
+		<h5>Posted {{article.created_at|timesince}} ago</h5>
+
+		<a href="{%url 'article_list'%}"> Back to Article list</a>
+		</ul>
+		
+
+
+	</div>
+	<h4> <a href="{% url 'comment_list' article.slug%}">see comments</a></h4>
+
+
+
+{% endblock body %}

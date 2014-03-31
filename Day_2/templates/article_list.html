@@ -1,0 +1,19 @@
+{%extends "base.html"%}
+
+{% block title %}
+	Articles
+{% endblock title %}
+
+{% block body %}
+	<div>
+		<h2>Article List</h2>
+		{%for articles in article_list%}
+		<ul>
+		<h3><a href="{%url 'article_detail' articles.slug%}">{{articles.title|capfirst}}</a></h3>
+		</ul>
+
+		{%empty%}
+			<h2>Sorry, no post yet, check soon!!!</h2>
+		{%endfor%}
+	</div>
+{% endblock body %}
