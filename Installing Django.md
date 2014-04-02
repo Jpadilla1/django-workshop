@@ -45,7 +45,7 @@ pip
 
 You should see the documentation that pip come bundled with.
 
-## virtaulenv
+## virtualenv
 
 Virtualenv is not necessary, but it recommended. More information on [http://www.virtualenv.org/en/latest/virtualenv.html](http://www.virtualenv.org/en/latest/virtualenv.html).
 
