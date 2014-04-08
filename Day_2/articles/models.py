@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib import admin
 
 
 # Class representation of a database table
@@ -15,3 +16,7 @@ class Article(models.Model):
 
     def comment_count(self):
         return self.comment_set.count()
+
+
+class ArticleAdmin(admin.ModelAdmin):
+    search_fields = ['title', 'author']
